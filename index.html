@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ETF | Gate.io Announcements</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Exo 2", sans-serif;
+
+        }
+
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+        }
+
+        body {
+            position: relative;
+            padding: 0 40px;
+
+        }
+
+        .spinner {
+            opacity: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 22.4px;
+            height: 22.4px;
+        }
+
+        .spinner::before,
+        .spinner::after {
+            --radius: 250;
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            animation: spinner-w7nm60 2s infinite linear;
+            background: #474bff;
+            border-radius: 50%;
+        }
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        .spinner::before {
+            --radius: -250;
+            background: #dbdcef;
+        }
+
+        @keyframes spinner-w7nm60 {
+            0% {
+                transform: scale(1) rotate(0deg) translateY(calc(var(--radius) * 1%));
+            }
+
+            50% {
+                transform: scale(0.5) rotate(1440deg) translateY(0);
+            }
+
+            100% {
+                transform: scale(1) rotate(2920deg) translateY(calc(var(--radius) * 1%));
+            }
+        }
+
+        nav {
+            text-transform: uppercase;
+            width: 100%;
+            text-align: center;
+            border-bottom: 1px solid black;
+            margin-bottom: 30px;
+            font-size: clamp(18px, 2.5vw, 48px);
+        }
+
+        nav h1 {
+            font-family: "Sour Gummy", serif;
+
+            margin-top: 3vh;
+        }
+
+        main {
+            min-height: 100vh;
+
+        }
+
+        #title {
+            font-size: clamp(16px, 1.8vw, 36px);
+        }
+
+        #brief {
+            margin-top: 20px;
+            font-size: clamp(14px, 1.4vw, 28px);
+            line-height: clamp(22px, 2.2vw, 38px);
+        }
+
+        #date {
+            margin: 10px 0;
+        }
+
+        footer {
+            border-top: 1px solid black;
+            padding: 12px 0;
+        }
+
+        footer p {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="spinner"></div>
+
+    <nav>
+        <h1> Gate.io ETF Announcements</h1>
+    </nav>
+
+    <main>
+        <h3 id="title"></h3>
+        <div id="brief">
+            <p id="desc"></p>
+            <p id="date"></p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; Gate.io × Nayedul</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
